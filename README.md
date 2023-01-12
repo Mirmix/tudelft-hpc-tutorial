@@ -284,7 +284,7 @@ module list
 ```
 For more information, please refer to [INSY page](https://login.hpc.tudelft.nl/) and check the DelftBlue section for similar commands.
 ## GPU on INSY
-### Checking gpu status
+### Requesting GPU
 ```bash
 #SBATCH --gres=gpu            # First available GPU
 #SBATCH --gres=gpu:2          # Two GPUs for the same job
