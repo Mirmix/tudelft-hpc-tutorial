@@ -243,13 +243,14 @@ If you don’t have a personal project directory, request data storage through t
 
 The preffered solution is to use 'Filezilla'. You can download it from [here](https://filezilla-project.org/download.php?type=client).
 
-If you lazy as me, you can use `scp` or `sftp` command. 
+If you lazy as me, you can use `scp`, `sftp`, or `rsync` command. 
 
 ```bash
 scp -r <local_path> <netid>@linux-bastion.tudelft.nl:<remote_path>
 sftp <netid>@linux-bastion.tudelft.nl
 put <local_path> <remote_path>
-# check the commands in DelftBlue section
+rsync -av --no-perms <local_path> <remote_path> # --no-perms is important
+# check the commands in DelftBlue section for more details
 ```
 
 ## Conda on INSY
@@ -284,7 +285,7 @@ module list
 ```
 For more information, please refer to [INSY page](https://login.hpc.tudelft.nl/) and check the DelftBlue section for similar commands.
 ## GPU on INSY
-### Requesting GPU
+### Requesting GPUs
 ```bash
 #SBATCH --gres=gpu            # First available GPU
 #SBATCH --gres=gpu:2          # Two GPUs for the same job
